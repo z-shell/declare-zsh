@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 # -*- mode: shell-script -*-
 # vim:ft=zsh:sw=4:sts=4:et
-
 # Started from Zle or from command line
-#
 # Copyright (c) 2017 Sebastian Gniazdowski
 
 emulate -LR zsh -o extendedglob -o typesetsilent -o warncreateglobal
@@ -14,7 +12,7 @@ local -F2 SECONDS=0
 # Run as script?
 if [[ "$0" != declzsh || -n "$ZSH_SCRIPT" ]]; then
     # Handle $0 according to the Zsh Plugin Standard:
-    # http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
+    # http://z-shell.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
     0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
     0="${${(M)0##/*}:-$PWD/$0}"
     fpath+=( "$0:h" )
@@ -986,9 +984,9 @@ cdreplay|env-whitelist|create) ]]; then
         main_cmd=( "${(z@)cmd[3]}" )
         main_cmd=( "${(Qkv)main_cmd[@]}" )
     fi
-    if [[ "$data" = " delete " ]]; then
+    if [[ "$data" = "delete" ]]; then
         unset "main_cmd[$key]"
-    elif [[ "$data" = " toggle " ]]; then
+    elif [[ "$data" = "toggle" ]]; then
         main_cmd[$key]=$(( !main_cmd[$key] ))
     else
         main_cmd[$key]="$data"
@@ -1017,9 +1015,9 @@ cdreplay|env-whitelist|create) ]]; then
         ice_cmd=( "${(z@)cmd[2]}" )
         ice_cmd=( "${(Qkv)ice_cmd[@]}" )
     fi
-    if [[ "$data" = " delete " ]]; then
+    if [[ "$data" = "delete" ]]; then
         unset "ice_cmd[$key]"
-    elif [[ "$data" = " toggle " ]]; then
+    elif [[ "$data" = "toggle" ]]; then
         ice_cmd[$key]=$(( !ice_cmd[$key] ))
     else
         ice_cmd[$key]="$data"
@@ -1366,8 +1364,8 @@ cdreplay|env-whitelist|create) ]]; then
     for idx in "${reply[@]}"; do
         (( idx*3 > ${#cmdlist} || idx <= 0 )) && \
             { /declzsh-dbg "[toggle] IMPROPER INDEX {$idx}/{${#cmdlist}}"; continue; }
-        .declzsh_update_ice_cmd disabled ' toggle ' "$idx"
-        .declzsh_update_main_cmd disabled ' toggle ' "$idx"
+        .declzsh_update_ice_cmd disabled 'toggle' "$idx"
+        .declzsh_update_main_cmd disabled 'toggle' "$idx"
     done
     return 0
 }
