@@ -1,6 +1,6 @@
 <h1> Declare Zsh </h1>
 
-# Introduction
+## Introduction
 
 [**declare-zsh**](https://github.com/z-shell/declare-zsh) is a parser for `zi` commands in `.zshrc`. It allows to perform the following actions on `.zshrc` **from the command-line**:
 
@@ -22,7 +22,7 @@ In other words, by issuing a `declzsh` command the user deploys a task of:
    impossible** and the tool can be safely used with option `-o ~/.zshrc` which
    points `declzsh` to the original `zshrc` as the destination output file).
 
-# Examples & Screenshots
+## Examples & Screenshots
 
 1. Example **disabling** of a plugin via the **toggle** option **-TT** – this
    works because the commands preceded by `:` are ignored by the shell:
