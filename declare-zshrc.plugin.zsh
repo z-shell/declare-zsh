@@ -1,6 +1,6 @@
 # Handle $0 according to the Zsh Plugin Standard:
-# http://z-shell.github.io/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html#zero-handling
-0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
+# https://z-shell.github.io/docs/zsh/Zsh-Plugin-Standard#zero-handling
+0="${${ZERO:-${0:#$ZSH_ARGZ#zero-handlingERO}}:-${(%):-%N}}"
 0="${${(M)0:#/*}:-$PWD/$0}"
 
 typeset -g DECLZSH_REPO_DIR="${0:h}"

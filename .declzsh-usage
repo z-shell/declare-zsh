@@ -1,22 +1,19 @@
-
 +declzsh-msg -rl "YEUsageRS:" \
     "GRdeclzshRS [-h|--help|-n|--noansi|-q|--quiet|-v|--verbose] \\" \
-    "    [-EE|--zp-enable {plugin-spec}] [-DD|--zp-disable {plugin-spec}] \\" \
-    "    [-TT|--zp-toggle {plugin-spec}] [-PP|--zp-purge {plugin-spec}] \\" \
+    "    [-EE|--zi-enable {plugin-spec}] [-DD|--zi-disable {plugin-spec}] \\" \
+    "    [-TT|--zi-toggle {plugin-spec}] [-PP|--zi-purge {plugin-spec}] \\" \
     "    [-AA {new plugin-spec}] [-o {output-zshrc}] input-zshrc" \
     "GRdeclzshRS [-h|--help|-n|--noansi|-q|--quiet|-v|--verbose] \\" \
-    "    [-o {output-zshrc}] input-zshrc --zp-add new plugin=spec" \
+    "    [-o {output-zshrc}] input-zshrc --zi-add new plugin=spec" \
     "" \
     "The second form allows to give the new plugin specification freely," \
     "i.e. without any quoting, e.g.:" \
     "" \
-    "    GRdeclzshRS ~/.zshrc YE--zp-addRS MA[RS wait\"2\" lucid svn MA]RS CYOMZ::plugins/gitRS" \
+    "    GRdeclzshRS ~/.zshrc YE--zi-addRS MA[RS wait\"2\" lucid svn MA]RS CYOMZ::plugins/gitRS" \
     "" \
     "Otherwise, with use of the -AA option, the spec has to be passed as" \
     "a single string:" \
     "" \
-    "    GRdeclzshRS YE-AARS YE\"MA[RS YEwait'2' lucid svn MA]RS CYOMZ::plugins/gitYE\"RS ~/.zshrc" \
-
-
+    "    GRdeclzshRS YE-AARS YE\"MA[RS YEwait'2' lucid svn MA]RS CYOMZ::plugins/gitYE\"RS ~/.zshrc"
 
 # vim:ft=zsh:sw=4:sts=4:et
