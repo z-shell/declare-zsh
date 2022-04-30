@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
-# -*- mode: shell-script -*-
-# vim:ft=zsh:sw=4:sts=4:et
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
 # Started from Zle or from command line
 # Copyright (c) 2017 Sebastian Gniazdowski
 
@@ -11,13 +12,14 @@ local -F2 SECONDS=0
 
 # Run as script?
 if [[ "$0" != declzsh || -n "$ZSH_SCRIPT" ]]; then
-    # Handle $0 according to the Zsh Plugin Standard:
-    # https://z-shell.github.io/docs/zsh/Zsh-Plugin-Standard
-    0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
-    0="${${(M)0##/*}:-$PWD/$0}"
-    fpath+=( "$0:h" )
+  # Standardized $0 Handling
+  # https://z.digitalclouds.dev/community/zsh_plugin_standard#zero-handling
+  0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
+  0="${${(M)0:#/*}:-$PWD/$0}"
+  fpath+=( "$0:h" )
 else
-    # Don't leak any functions
+    # Preventing Function Pollution
+    # https://z.digitalclouds.dev/community/zsh_plugin_standard#preventing-function-pollution
     typeset -g declzsh_ef
     declzsh_ef=( ${(k)functions} )
     trap "unset -f -- \"\${(k)functions[@]:|declzsh_ef}\" &>/dev/null; unset declzsh_ef" EXIT
