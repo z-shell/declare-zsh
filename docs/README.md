@@ -26,20 +26,20 @@ In other words, by issuing a `declzsh` command the user deploys a task of:
 
 1. Example **disabling** of a plugin via the **toggle** option **-TT** – this
    works because the commands preceded by `:` are ignored by the shell:
-   ![screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/img/toggle.png)
+   ![screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/docs/img/toggle.png)
 
 2. Example **addition** of a plugin via the option **-AA** – in order to also
    set up ice modifiers enclose them in a preceding square-bracket block, i.e.
    `declzsh -AA '[ wait"1" lucid ] z-shell/null'`:
-   ![screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/img/add.png)
+   ![screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/docs/img/add.png)
 
 3. Example **deletion** of a plugin via the **purge** option **-PP** – the
    argument is treated as pattern, pass `*` to delete all plugins and snippets!:
-   ![screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/img/purge.png)
+   ![screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/docs/img/purge.png)
 
 # Usage
 
 Multiple actions, i.e. multiple options like `-AA`, `-PP`, `-DD`, etc. are
 possible in a single `declzsh` run.
 
-![usage screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/img/usage.png)
+![usage screenshot](https://raw.githubusercontent.com/z-shell/declare-zsh/main/docs/img/usage.png)

@@ -12,11 +12,11 @@ local -F2 SECONDS=0
 
 # Run as script?
 if [[ "$0" != declzsh || -n "$ZSH_SCRIPT" ]]; then
-  # Standardized $0 Handling
-  # https://z.digitalclouds.dev/community/zsh_plugin_standard#zero-handling
-  0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
-  0="${${(M)0:#/*}:-$PWD/$0}"
-  fpath+=( "$0:h" )
+    # Standardized $0 Handling
+    # https://z.digitalclouds.dev/community/zsh_plugin_standard#zero-handling
+    0="${ZERO:-${${0:#$ZSH_ARGZERO}:-${(%):-%N}}}"
+    0="${${(M)0:#/*}:-$PWD/$0}"
+    fpath+=( "$0:h" )
 else
     # Preventing Function Pollution
     # https://z.digitalclouds.dev/community/zsh_plugin_standard#preventing-function-pollution
