@@ -1,6 +1,6 @@
 version: 0.1
 cli:
-  version: 0.11.0-beta
+  version: 0.13.0-beta
 repo:
   repo:
     host: github.com
@@ -16,10 +16,14 @@ lint:
       environment:
         - name: PATH
           list: ["${env.PATH}"]
+    - name: markdownlint
+      command:
+        [markdownlint, -q, --config, .github/.markdownlint.yaml, "${target}"]
+      direct_configs: [.github/.markdownlint.yaml]
   enabled:
     - zsh-n@system
-    - actionlint@1.6.12
-    - gitleaks@8.8.4
+    - actionlint@1.6.13
+    - gitleaks@8.8.7
     - hadolint@2.10.0
     - markdownlint@0.31.1
     - prettier@2.6.2
