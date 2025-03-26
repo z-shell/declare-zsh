@@ -16,10 +16,6 @@ lint:
       environment:
         - name: PATH
           list: ["${env.PATH}"]
-    - name: markdownlint
-      command:
-        [markdownlint, -q, --config, .github/.markdownlint.yaml, "${target}"]
-      direct_configs: [.github/.markdownlint.yaml]
   enabled:
     - zsh-n@system
     - actionlint@1.6.13
